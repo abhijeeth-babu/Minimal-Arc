@@ -48,16 +48,21 @@ html:not([privatebrowsingmode="temporary"]) .titlebar-buttonbox-container {
   right: 0;
   top: 9px;
   display: flex;
-  justify-content: center;
-  width: 110px !important;
+  justify-content: flex-end;
+  width: 40px !important; /* Reduced width for single button */
 }
 
 .titlebar-button {
   width: 36px !important;
 }
 
+/* Hide unused buttons */
+.titlebar-button:not(.titlebar-close) {
+  display: none !important;
+}
+
 html:not([privatebrowsingmode="temporary"]) #nav-bar {
-  width: calc(100% - 110px);
+  width: calc(100% - 40px); /* Adjusted width */
 }
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-header {
@@ -82,9 +87,9 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-header {
 html:not([privatebrowsingmode="temporary"]) #sidebar-box {
   --uc-sidebar-width: 45px;
   --uc-sidebar-hover-width: 360px;
-  --uc-autohide-sidebar-delay-before: 125ms;
-  --uc-autohide-sidebar-delay-after: 300ms;
-  --uc-autohide-transition-duration: 300ms;
+  --uc-autohide-sidebar-delay-before: 100ms;
+  --uc-autohide-sidebar-delay-after: 150ms;
+  --uc-autohide-transition-duration: 150ms;
   --uc-autohide-transition-type: ease-in-out;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
